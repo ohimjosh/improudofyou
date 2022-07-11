@@ -31,21 +31,20 @@ Only one valid answer exists.
 
 
 '''
-from tkinter import N
-from typing import List
-
-
 nums = [2,7,11,15]
 target = 9
 
-class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        prevMap = {}
-        for i,n in enumerate(nums):
-            diff = target - n 
-            if diff in prevMap:
-                return [prevMap[diff], i]
-            prevMap[n] = i
-        return
+def solution(nums, target):
+    prevMap = {}
+    # enumerate iterates through the list
+    # by enumerating through nums the index and num are returned
+    for index, num in enumerate(nums):
+        diff = target - num
+        if diff in prevMap:
+            return [prevMap[diff], index]
+        prevMap[num] = index
         
+print(solution(nums, target))
+
+
 
